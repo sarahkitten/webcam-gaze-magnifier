@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../magStyle.css" />
+  <script src="../../js/mag.js"> </script>
+</head>
+
+<body>
+
+  <div class="img-magnifier-container">
+  <!-- *************************************** FILL IN IMAGE HERE ************************************ -->
+    <img id="myimage" src="../../imgs/b10.png" width="1200" height="600">
+  <!-- *********************************************************************************************** -->
+  </div>
+
+  <script>
+    /* Initiate Magnify Function
+    with the id of the image, and the strength of the magnifier glass:*/
+    /* *************************************** FILL IN BUTTON COORDINATES AND NEXT PAGE HERE *****************/
+    var btnCoords = { x_lower : 759, y_lower : 216, x_upper : 851, y_upper : 243 };
+    magnify("myimage", 5, "../../Target/b-target/end.html", btnCoords);
+    /*********************************************************************************************************/
+  </script>
+
+</body>
+
+</html>

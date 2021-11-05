@@ -1,0 +1,82 @@
+body{    
+    color: rgb(0, 0, 0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 165px;
+    line-height: 8;
+    text-align: center;
+}
+
+
+div[class='1'] {
+    font-weight: bold;
+    font-size: 8pt
+}
+div[class='2'] {
+    font-weight: bold;
+    font-size: 10pt
+}
+div[class='3'] {
+    font-weight: bold;
+    font-size: 12pt
+}
+div[class='4'] {
+    font-weight: bold;
+    font-size: 14pt
+}
+div[class='5'] {
+    font-weight: bold;
+    font-size: 16pt
+}
+div[class='6'] {
+    font-weight: bold;
+    font-size: 18pt
+}
+div[class='7'] {
+    font-weight: bold;
+    font-size: 20pt
+}
+div[class='8'] {
+    font-weight: bold;
+    font-size: 22pt
+}
+div[class='9'] {
+    font-weight: bold;
+    font-size: 24pt
+}
+div[class='10'] {
+    font-weight: bold;
+    font-size: 26pt
+}
+div[class='11'] {
+    font-weight: bold;
+    font-size: 28pt
+}
+div[class='12'] {
+    font-weight: bold;
+    font-size: 30pt
+}
+div[class='13'] {
+    font-weight: bold;
+    font-size: 32pt
+}
+div[class='14'] {
+    font-weight: bold;
+    font-size: 34pt
+}
+div[class='15'] {
+    font-weight: bold;
+    font-size: 36pt
+}
+div[class='16'] {
+    font-weight: bold;
+    font-size: 38pt
+}
+div[class='17'] {
+    font-weight: bold;
+    font-size: 40pt
+}
+div[class='18'] {
+    font-weight: bold;
+    font-size: 120pt;
+}
+

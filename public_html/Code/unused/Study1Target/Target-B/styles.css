@@ -1,0 +1,17 @@
+body {
+    background-position: right;
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 165px;
+    font-size: 18pt;  /*CHANGE? default = 18 */
+    }
+
+input {
+    font-size: 22pt;
+    height: 100px;
+    width: 200px;
+}
+
+div {
+    padding:100px;
+}

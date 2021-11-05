@@ -1,0 +1,40 @@
+body {
+  padding-right: 200px;
+  padding-left: 200px;
+  padding-top: 125px;
+  padding-bottom: 125px;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto; 
+}
+
+.grid-item {
+  color: black;
+  height: 57px;
+  font-size: 8pt;  /*CHANGE default = 8*/
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.grid-item-correct {
+  font-weight: bold;
+  color: black;
+  height: 57px;
+  font-size: 8pt; /*CHANGE default = 8 */
+  text-transform: uppercase;
+}
+
+.grid-item-correct:active {
+  background-color: green
+}
+
+.grid-item:active {
+  background-color: red
+}
+
+.invisible-grid-item {
+  background: transparent;
+}

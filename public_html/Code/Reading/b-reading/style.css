@@ -1,0 +1,31 @@
+body {
+    background-position: right;
+    color: rgb(0, 0, 0);
+    padding: 150px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 1.5;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20pt; /*change default = 20*/
+    font-weight: bold;
+    }
+
+input {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30pt; /*change default = 20*/
+    font-weight: bold;
+    height: 100px;
+    width: 200px;
+}
+
+input[type=radio] {
+    height: 40px;
+    width: 40px;
+}
+
+div {
+    padding:100px;
+}
+
+
+/*2A, 4A, 1B, 4B */

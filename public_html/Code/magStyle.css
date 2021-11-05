@@ -1,0 +1,16 @@
+* {box-sizing: border-box;}
+
+.img-magnifier-container {
+  position:relative;
+}
+
+.img-magnifier-glass {
+  position: absolute;
+  border: 6px solid #F542f5;
+  /*border-radius: 50%;*/
+  cursor: none;
+  /*Set the size of the magnifier glass:*/
+  width: 700px;
+  height: 300px;
+}
+

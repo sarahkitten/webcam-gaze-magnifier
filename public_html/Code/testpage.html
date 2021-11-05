@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="Target/a-target/targetStyles.css" />
+</head>
+
+<body onload="startTimer()">
+
+    <script src="js/clicklog.js"></script>
+<!--
+    <div id="timerContainer">
+	    <div class="timer" onclick="startTimer()"></div>
+
+    <div class="startTimer reset" onclick="startTimer()" >
+        <i class="fas fa-play"></i>
+      </div>
+
+    <div class="pauseTimer reset" onclick="pauseTimer()" >
+        <i class="fas fa-pause"></i>
+      </div>
+
+    <div class="resetTimer reset" onclick="resetTimer()"></div>
+    </div>
+-->
+    <script type="text/javascript" src="js/stopWatch.js"></script>
+
+    <div class="grid-container">
+        <input type="button" class="grid-item" value="rtvc"> 
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>
+        <input type="button" class="grid-item" value="text">
+        <input type="button" class="grid-item" value="awdw">
+        <input type="button" class="grid-item" value="qrty">
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>  
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>   
+        <div class="invisible-grid-item"></div>  
+        <div class="invisible-grid-item"></div>  
+        <input type="button" class="grid-item" value="exnt">
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>
+        <input type="button" class="grid-item" value="nity">
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>
+        <input type="button" class="grid-item" value="ydki">
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>
+        <input type="button" class="grid-item" value="xert">
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>   
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>
+        <input type="button" class="grid-item" value="ntex">
+        <div class="invisible-grid-item"></div>   
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>  
+        <div class="invisible-grid-item"></div>
+        <input type="button" class="grid-item" value="dwnp">
+        <div class="invisible-grid-item"></div>   
+        <div class="invisible-grid-item"></div>
+        <input type="button" class="grid-item" value="dwgy">
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>
+        <input type="button" class="grid-item" value="entr">
+        <div class="invisible-grid-item"></div>  
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>   
+        <div class="invisible-grid-item"></div>   
+        <input type="button" class="grid-item" value="ipol">
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>   
+        <input type="button" class="grid-item" value="qgdr">
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>
+        <input type="button" class="grid-item" value="yuip">
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>  
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>   
+        <div class="invisible-grid-item"></div>  
+        <input type="button" class="grid-item" value="nitx">
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>   
+        <input type="button" class="grid-item" value="xetn">
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>   
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>  
+        <div class="invisible-grid-item"></div>
+        <input type="button" class="grid-item" value="nixt">
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>   
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>
+        <input type="button" class="grid-item" value="nexx">
+        <div class="invisible-grid-item"></div>   
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>
+        <input type="button" class="grid-item" value="rofl">
+        <div class="invisible-grid-item"></div> 
+        <div class="invisible-grid-item"></div>   
+        <div class="invisible-grid-item"></div>
+        <input type="button" class="grid-item" value="wdhb">
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>   
+        <input type="button" class="grid-item" value="ntex">
+        <div class="invisible-grid-item"></div>  
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>   
+        <input type="button" class="grid-item" value="sent">
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>
+        <input type="button" class="grid-item-correct" onclick="pauseTimer()" value="next">
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>  
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>   
+        <div class="invisible-grid-item"></div>
+        <input type="button" class="grid-item" value="bext">
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>   
+        <input type="button" class="grid-item" value="nert">
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>   
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>   
+        <input type="button" class="grid-item" value="bixt">
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>  
+        <div class="invisible-grid-item"></div>  
+        <input type="button" class="grid-item" value="nips">
+        <input type="button" class="grid-item" value="nrtx">
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>   
+        <div class="invisible-grid-item"></div>  
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>   
+        <div class="invisible-grid-item"></div>
+        <div class="invisible-grid-item"></div>   
+        <div class="invisible-grid-item"></div>
+
+    </div>
+</body>
+</html>

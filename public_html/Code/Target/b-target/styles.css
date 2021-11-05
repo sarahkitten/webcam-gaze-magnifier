@@ -1,0 +1,29 @@
+body {
+    background-position: right;
+    padding: 165px;
+    color: rgb(0, 0, 0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-top: 50px;
+    font-size: 20pt; /*change default = 20*/
+    font-weight: bold;
+    }
+
+input {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30pt; /*change default = 20*/
+    font-weight: bold;
+    height: 100px;
+    width: 200px;
+}
+
+div {
+    padding:100px;
+}
+
+
+/*    
+Font requirements for low-vision people:
+
+20pt, bold, 1.5 linespacing, 1 inch from the top, .75 inches from the bottom, Verdana font
+
+*/

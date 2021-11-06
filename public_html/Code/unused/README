@@ -1,0 +1,14 @@
+Unused
+
+This folder contains unused scripts and HTML pages.  Some are copied over from Maus et al., 
+and some were used for earlier prototypes and versions of the final gaze magnifier / experiment.
+
+Study1Reading and Study1Target contain the HTML task pages used by Maus et al. for their first of two experiments-- 
+we used the smaller set of tasks from their second experiment (found in the Tasks folder).
+Analysis and PythonScripts were also used by Maus et al. but were not relevant to us.
+
+MagReading and MagTarget contain the HTML task pages we used for our first of two experiments.
+This experiment used a mouse-controlled magnifier that was the predecessor to our gaze-controlled magnifier,
+and separated each task into multiple pages rather than using one page with multiple images.
+Tasks were progressed through by clicking on images of buttons, rather than with key controls.
+File paths may need to be adjusted for these pages to work properly.

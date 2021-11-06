@@ -7,11 +7,11 @@
 		Timer: https://jsfiddle.net/zymLk973/
 */
 
-function magnify(imgID, doc, startEyeTracking, stopEyeTracking, tasks) {
+function magnify(imgID, doc, startEyeTracking, stopEyeTracking, tasks, blur = false) {
 	/************************************************ ADJUSTABLE VARIABLES ********************************************* */
 
 	/* Variables storing the current size and magnification level of the magnifier (px) -- defaults can be adjusted */
-	var glassWidth = 700;
+	var glassWidth = 600;
 	var glassHeight = 300;
 	var zoom = 4;
 
@@ -74,14 +74,19 @@ function magnify(imgID, doc, startEyeTracking, stopEyeTracking, tasks) {
 	/*create magnifier glass:*/
 	glass = document.createElement("DIV");
 	glass.setAttribute("class", "img-magnifier-glass");
-	glass.style.height = "300px";
-	glass.style.width = "700px";
+	glass.style.height = glassHeight.toString() + "px";
+	glass.style.width = glassWidth.toString() + "px";
 
 	/*insert magnifier glass:*/
 	img.parentElement.insertBefore(glass, img);
 
 	/*set background properties for the magnifier glass:*/
-	glass.style.backgroundImage = "url('" + img.src + "')";
+	if (blur) {
+		// set mag background image to the non-blurred version
+		glass.style.backgroundImage = "url('" + img.src.slice(0, -9) + ".png" + "')";
+	} else {
+		glass.style.backgroundImage = "url('" + img.src + "')";
+	}
 	glass.style.backgroundRepeat = "no-repeat";
 	glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
 	bw = 3;
@@ -331,7 +336,14 @@ function magnify(imgID, doc, startEyeTracking, stopEyeTracking, tasks) {
 						}
 						img.src = "imgs/" + tasks[nextTaskIndex] + ".png";
 						nextTaskIndex++;
-						  glass.style.backgroundImage = "url('" + img.src + "')";
+						if (blur) {
+							// set mag background image to the non-blurred version
+							if (img.src.includes("blur")) {
+								glass.style.backgroundImage = "url('" + img.src.slice(0, -9) + ".png" + "')";
+							}
+						} else {
+							glass.style.backgroundImage = "url('" + img.src + "')";
+						}
 						startTimer();
 					} else {
 						// display research params

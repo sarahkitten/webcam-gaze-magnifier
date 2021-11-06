@@ -1,0 +1,100 @@
+<!-- 
+	Blurred Reading HTML page-- for testing the magnifier tasks with good vision
+	Sarah Kitten
+	Modified 11/5/2021
+	Based on code from https://api.gazerecorder.com/
+ -->
+
+ <!DOCTYPE html>
+ <html>
+ 
+ <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="magStyle.css" />
+   <script src="js/gazeMagnifier.js"> </script>
+   <script src="https://api.gazerecorder.com/GazeCloudAPI.js?v=1.2" ></script>
+   <script src="https://api.gazerecorder.com/heatmapLive.js" ></script>
+ </head>
+ 
+ <body>
+ 
+   <div class="img-magnifier-container">
+	   <!-- Display initial image at a consistent size -->
+	 <img id="myimage" src="imgs/lorem-blur.png" width="1200" height="600">
+   </div>
+ 
+   <script type = "text/javascript" >
+ 
+	 function PlotGaze(GazeData) {
+ 
+		 /*
+		 GazeData info:
+		 GazeData.state // 0: valid gaze data; -1 : face tracking lost, 1 : gaze uncalibrated
+		 GazeData.docX // gaze x in document coordinates
+		 GazeData.docY // gaze y in document cordinates
+		 GazeData.time // timestamp
+		 */
+ 
+		 // Set inner HTML for gaze/head data
+		 document.getElementById("GazeData").innerHTML = GazeData.docX + " " + GazeData.docY;
+		 document.getElementById("HeadPhoseData").innerHTML = " HeadX: " + GazeData.HeadX + " HeadY: " + GazeData.HeadY + " HeadZ: " + GazeData.HeadZ;
+		 document.getElementById("HeadRotData").innerHTML = " Yaw: " + GazeData.HeadYaw + " Pitch: " + GazeData.HeadPitch + " Roll: " + GazeData.HeadRoll;
+	   
+		 var x = GazeData.docX;
+		 var y = GazeData.docY;
+		 var gaze = document.getElementById("gaze");
+		 x -= gaze .clientWidth/2;
+		 y -= gaze .clientHeight/2;
+		 gaze.style.left = x + "px";
+		 gaze.style.top = y + "px";
+	 
+		 if(GazeData.state != 0) {
+			 if( gaze.style.display  == 'block')
+				 gaze.style.display = 'none';
+		 }
+	 
+		 else {
+			 if( gaze.style.display  == 'none')
+				 gaze.style.display = 'block';
+		 }
+		 ShowHeatMap();
+	 }
+ 
+		   //////set callbacks/////////
+	 window.addEventListener("load", function() {
+			GazeCloudAPI.OnCalibrationComplete =function(){ShowHeatMap(); console.log('gaze Calibration Complete')  }
+			GazeCloudAPI.OnCd =  function(){ console.log('camera  access denied')  }
+			GazeCloudAPI.OnError =  function(msg){ console.log('err: ' + msg)  }
+			GazeCloudAPI.UseClickRecalibration = true;
+			GazeCloudAPI.OnResult = PlotGaze;
+		  });
+ 
+	 function start() {
+		 GazeCloudAPI.StartEyeTracking(); 
+		 if(false)
+			 GazeCloudAPI.SetFps(15);
+	 }
+ 
+	 function stop()
+		 {
+			 GazeCloudAPI.StopEyeTracking();
+		 }
+ 
+	 /* call magnify function with tasks list */
+	 const tasks = ["instr_calib", "bp1-blur", "bq1-blur", "bp2-blur", "bq2-blur"];
+	 magnify("myimage", document, start, stop, tasks, blur = true);
+ 
+   </script>
+ 
+   <!-- Gaze/head position data: can be displayed if needed -->
+   <p id = "GazeData" style = 'display: none'> </p>
+   <p id = "HeadPhoseData" style = 'display: none'> </p>
+   <p id = "HeadRotData" style = 'display: none'> </p>
+ 
+   <!-- Gaze visualization: a circle is displayed at the point on the screen where the user's gaze is calculated to be -->
+   <div id = "gaze" style = 'position:absolute; display:none; width:100px; height:100px; border-radius:50%; border:solid 2px rgba(255,255,255,.2); box-shadow: 0 0 100px 3px rgba(125,125,125,.5); pointer-events:none; z-index:999999'></div> 
+ 
+ 
+ </body>
+ 
+ </html>

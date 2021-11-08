@@ -43,8 +43,9 @@ function magnify(imgID, doc, startEyeTracking, stopEyeTracking, tasks, blur = fa
 		// Press to record task time and proceed to the next task, press while holding ctrl to start eye tracking
 		var nextTask_ctrlEyeTrackKey = "KeyN";
 
-		// Press to call displayInfo function
+		// Press to call displayInfo or displayInstructions functions
 		var infoKey = "KeyI";
+		var instrKey = "Escape";
 
 	/************************************************ NON-ADJUSTABLE VARIABLES ********************************************* */
 
@@ -202,18 +203,41 @@ function magnify(imgID, doc, startEyeTracking, stopEyeTracking, tasks, blur = fa
 	/************************** Info and logging ****************************** */
 
 	function displayInfo() {
-	// display info as an alert on infoKey keypress
-	infoString = "Zoom: " + zoom + ", Height: " + glass.style.height + ", Width: " + glass.style.width
-		+ ", WASD: " + wasdCount + ", HLock: " + hLockCount + "\n" + timesString;
-	alert(infoString);
-	coordsString = infoString + coordsString;
-	const text = doc.createElement('textarea');
-	text.value = coordsString;
+		// display info as an alert on infoKey keypress and copy info/coordinate data to the clipboard
+		infoString = "Zoom: " + zoom + ", Height: " + glass.style.height + ", Width: " + glass.style.width
+			+ ", WASD: " + wasdCount + ", HLock: " + hLockCount + "\n" + timesString;
+		alert(infoString);
+		coordsString = infoString + coordsString;
+		const text = doc.createElement('textarea');
+		text.value = coordsString;
 		doc.body.appendChild(text);
 		text.select();
 		doc.execCommand('copy');
 		doc.body.removeChild(text);
 	}
+
+	function displayInstructions() {
+		// display instructions as an alert on instrKey keypress
+		infoString = "Welcome to the Gaze Controlled Screen Magnifier!\n\n" +
+			// "Here you can try out the tasks we used to test the magnifier with people with low vision.  " +
+			// "In our tests, we used a version which was identical but without the blurred background.  " +
+			// "In this version, the background is blurred so that people without low vision can try out the tasks with a more accurate experience.\n\n" +
+			"Calibration:\n" +
+			"The first two images are for setup and instructions-- press N to proceed.\n" +
+			"Press Ctrl-N to start the eye tracking-- you will be asked to follow a target across the screen with your eyes to calibrate.\n\n" +
+			"Target task instructions:\n" +
+			"Try to find the word 'NEXT' on each screen.  Press N to move to the next screen.\n\n" +
+			"Reading task instructions:\n" +
+			"Read each paragraph, then press N to move to the next screen for a question about the reading.  You can hold Enter to lock the magnifier to only horizontal motion.\n\n" +
+			"Controls:\n" +
+			"Z/Ctrl-Z: Change zoom level (keep the magnifier zoomed in for a more accurate experience)\n" +
+			"Arrow keys: Change magnifier size\n" +
+			"Ctrl-N: Start eye tracking\n" +
+			"N: Next page\n" +
+			"Enter: Hold to lock magnifier to only horizontal motion (for reading)\n" +
+			"Esc: See instructions/controls";
+		alert(infoString);
+		}
 
 		/* Append current gaze coordinate to coordsString */
 	function recordCoords() {
@@ -352,9 +376,12 @@ function magnify(imgID, doc, startEyeTracking, stopEyeTracking, tasks, blur = fa
 				}
 				break;
 			
-			/* Press to call displayInfo function */
+			/* Press to call displayInfo/displayInstructions functions */
 			case infoKey:
 				displayInfo();
+				break;
+			case instrKey:
+				displayInstructions();
 				break;
 			default:
 				console.log(e.code);

@@ -1,7 +1,7 @@
 # Webcam Gaze Magnifier
 Made by Sarah Kitten 
 
-This is the repository for the webcam-controlled gaze magnifier made for the 2021 Rochester Institute of Technology Computational Sensing for Human-centered AI REU (research experience for undergraduates).  The program uses the GazeRecorder API to track eye gaze through an ordinary webcam and move a Javascript-based magnifier
+This is the repository for the webcam-controlled gaze magnifier made for the 2021 Rochester Institute of Technology Computational Sensing for Human-centered AI REU (research experience for undergraduates).  The program uses the GazeRecorder API to track eye gaze through an ordinary webcam and move a Javascript-based magnifier towards the user's gaze.
  
 Homepage: https://cs.rit.edu/~snkreu/Homepage.html
 
